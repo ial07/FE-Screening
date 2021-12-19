@@ -1,0 +1,16 @@
+### Login
+POST https://frontend-screening-v1.herokuapp.com/login
+content-type: application/json
+
+{
+ "email": "raymond@luwjistik.com",
+ "password": "e2e0334ec93288bc039a2c2f614cb16a"
+}
+
+### Post Order
+POST https://frontend-screening-v1.herokuapp.com/order
+Content-Type: application/json
+Authorization: [session]
+
+### Get Order
+GET https://frontend-screening-v1.herokuapp.com/order
