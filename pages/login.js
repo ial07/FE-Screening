@@ -6,8 +6,8 @@ import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 
 const login = () => {
-    const [email, setEmail] = useState('raymond@luwjistik.com')
-    const [password, setPassword] = useState('e2e0334ec93288bc039a2c2f614cb16a')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
     const [state, setState] = useContext(UserContext)

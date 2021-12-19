@@ -9,7 +9,7 @@ const Footer = () => {
                         © Copyright <strong><span>iPortfolio</span></strong>
                     </div>
                     <div className="credits">
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        Designed by <a href="https://www.instagram.com/ial_ilham/">IAL</a>
                     </div>
                 </div>
             </footer>
