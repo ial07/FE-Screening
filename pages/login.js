@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import Forms from '../component/Forms'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
 
 const login = () => {
     const [email, setEmail] = useState('')
@@ -34,7 +34,8 @@ const login = () => {
             // save in local storage
             window.localStorage.setItem('session', JSON.stringify(data.data))
 
-            router.push('/')
+            Router.reload('/')
+            // router.push('/')
         } catch (err) {
             toast.error(err.response.data.message)
             setLoading(false)

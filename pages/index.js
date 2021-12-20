@@ -11,6 +11,7 @@ import UserRoute from '../routes/UserRoute'
 
 const index = () => {
     const [state, setState] = useContext(UserContext)
+
     const [order, setOrder] = useState({
         order_id: '',
         user_id: '',
@@ -42,14 +43,14 @@ const index = () => {
     const router = useRouter()
 
     useEffect(() => {
-        if (state) {
+        if (state !== null) {
             const header = {
                 headers: {
                     Authorization: state.session
                 }
             }
 
-            const { data } = axios.get(`${process.env.NEXT_PUBLIC_API}/order`, header)
+            axios.get(`${process.env.NEXT_PUBLIC_API}/order`, header)
                 .then(res => {
                     // console.log(res.data)
                     setOrder(res.data)
@@ -58,12 +59,11 @@ const index = () => {
     }, [state && state.session])
 
     // const getOrder = async () => {
-    //     try {
-    //         const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/order`)
-    //         console.log('Data =>', data)
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
+    //     const { data } = axios.get(`${process.env.NEXT_PUBLIC_API}/order`, header)
+    //         .then(res => {
+    //             // console.log(res.data)
+    //             setOrder(res.data)
+    //         }).catch(err => console.log(err))
     // }
 
     if (state === null) { router.push('/login') }
